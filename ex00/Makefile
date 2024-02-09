@@ -1,7 +1,7 @@
 CC 			=	c++
 CFLAGS 		=	-Wall -Wextra -Werror 
 OPTION 		=	-std=c++98
-NAME 		=	Bureaucrat
+NAME 		=	converter
 INCLUDES	=	./include
 SRC			=	$(shell find ./src -name "main.cpp" -o -name "ScalarConverter.cpp" -type f)
 
