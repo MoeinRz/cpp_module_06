@@ -1,10 +1,5 @@
 #include "../include/ScalarConverter.hpp"
 
-void leakes(void)
-{
-    system("leaks converter");
-}
-
 int main(int argc, char* argv[])
 {
     try {
@@ -12,7 +7,6 @@ int main(int argc, char* argv[])
         {
             throw std::invalid_argument("Usage: " + std::string(argv[0]) + " <input>");
         }
-        // leakes();
         ScalarConverter::convert(argv[1]);
         return 0;
     }
