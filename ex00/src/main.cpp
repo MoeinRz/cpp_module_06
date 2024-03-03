@@ -1,31 +1,24 @@
 #include "../include/ScalarConverter.hpp"
 
-int main(int argc, char **av)
+void leakes(void)
 {
-    if (argc != 2)
-    {
-        std::cout << "usage: ./convert [string]" << std::endl;
-        return (1);
-    }
-
-    ScalarConverter::convert(av[1]);
-    return (0);
+    system("leaks converter");
 }
 
-// int main(int argc, char* argv[])
-// {
-//     try {
-//         if (argc != 2)
-//         {
-//             throw std::invalid_argument("Usage: " + std::string(argv[0]) + " <input>");
-//         }
-//         std::string input = argv[1];
-//         ScalarConverter::convert(input);
-//         return 0;
-//     }
-//     catch (const std::exception& e)
-//     {
-//         std::cerr << "Error: " << e.what() << std::endl;
-//         return 1;
-//     }
-// }
+int main(int argc, char* argv[])
+{
+    try {
+        if (argc != 2)
+        {
+            throw std::invalid_argument("Usage: " + std::string(argv[0]) + " <input>");
+        }
+        leakes();
+        ScalarConverter::convert(argv[1]);
+        return 0;
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return 1;
+    }
+}

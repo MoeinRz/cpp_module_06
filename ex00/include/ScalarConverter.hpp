@@ -14,14 +14,16 @@
 class ScalarConverter
 {
     public:
-        static void convert(std::string const &litteral);
+        ScalarConverter(ScalarConverter const &other);
+        ~ScalarConverter();
+        static void convert(std::string const &src);
     private:
         ScalarConverter(void);
-        static void toSpecial(std::string litteral);
-        static void toChar(std::string litteral);
-        static void toInt(std::string litteral);
-        static void toFloat(std::string litteral);
-        static void toDouble(std::string litteral);
+        static void convert2Special(std::string src);
+        static void convert2Char(std::string src);
+        static void convert2Int(std::string src);
+        static void convert2Float(std::string src);
+        static void convert2Double(std::string src);
 };
 
 #endif
