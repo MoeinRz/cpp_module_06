@@ -1,19 +1,19 @@
-#include "../include/ScalarConverter.hpp"
+#include "../include/Serializer.hpp"
 
-int main(int argc, char* argv[])
+int main()
 {
-    try {
-        if (argc != 2)
-        {
-            throw std::invalid_argument("Usage: " + std::string(argv[0]) + " <input>");
-        }
-        std::string input = argv[1];
-        ScalarConverter::convert(input);
-        return 0;
-    }
-    catch (const std::exception& e)
+    Data originalData = {"SampleString", 12};
+    Data* originalPtr = &originalData;
+
+    std::cout <<  "Initial Data: " <<  originalPtr->n << ", " << originalPtr->s1 << "\n\n";
+
+    uintptr_t serialized = Serializer::serialize(originalPtr);
+    Data* newDeserializedData = Serializer::deserialize(serialized);
+
+    if (newDeserializedData == originalPtr)
     {
-        std::cerr << "Error: " << e.what() << std::endl;
-        return 1;
+        std::cout << "Serialization/Derialization complete.\n\n";
+        std::cout << "Post-Deserialization Data: "  << newDeserializedData->n << ", " << newDeserializedData->s1 << "\n";
     }
+    return 0;
 }
