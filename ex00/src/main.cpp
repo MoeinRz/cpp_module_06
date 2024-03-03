@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
         {
             throw std::invalid_argument("Usage: " + std::string(argv[0]) + " <input>");
         }
-        leakes();
+        // leakes();
         ScalarConverter::convert(argv[1]);
         return 0;
     }

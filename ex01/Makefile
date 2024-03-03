@@ -1,7 +1,7 @@
 CC 			=	c++
 CFLAGS 		=	-Wall -Wextra -Werror 
 OPTION 		=	-std=c++98
-NAME 		=	converter
+NAME 		=	serializer
 INCLUDES	=	./include
 SRC			=	$(shell find ./src -name "main.cpp" -o -name "Serializer.cpp" -type f)
 

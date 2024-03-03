@@ -1,12 +1,18 @@
 #include "../include/Serializer.hpp"
 
-Serializer::Serializer(void) { return; }
-
-Serializer::~Serializer(void) { return; }
-
-Serializer &Serializer::operator=(Serializer const &rhs)
+Serializer::Serializer(void)
 {
-    static_cast<void>(rhs);
+    return;
+}
+
+Serializer::~Serializer(void)
+{
+    return;
+}
+
+Serializer &Serializer::operator=(Serializer const &src)
+{
+    static_cast<void>(src);
     return *this;
 }
 

@@ -1,9 +1,9 @@
 CC 			=	c++
-CFLAGS 		=	-g -Wall -Wextra -Werror 
+CFLAGS 		=	-Wall -Wextra -Werror 
 OPTION 		=	-std=c++98
 NAME 		=	converter
 INCLUDES	=	./include
-SRC			=	$(shell find ./src -name "main.cpp" -o -name "ScalarConverter.cpp" -type f)
+SRC			=	$(shell find ./src -name "main.cpp" -type f)
 
 OBJECTS		=	$(SRC:.cpp=.o)
 
