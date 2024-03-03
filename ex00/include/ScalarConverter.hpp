@@ -1,19 +1,27 @@
-# ifndef SCALARCONVERTER_HPP
+#ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
 
-#include <sstream>
-#include <iostream>
-#include <iomanip>
-#include <limits>
-#include <cmath>
+
+# include <iostream>
+# include <string>
+# include <fstream>
+# include <cstdlib>
+# include <ctime>
+# include <limits>
+# include <sstream>
+# include <cmath>
 
 class ScalarConverter
 {
     public:
-        ScalarConverter();
-        ~ScalarConverter();
-        static void convert(const std::string& input);
-
+        static void convert(std::string const &litteral);
+    private:
+        ScalarConverter(void);
+        static void toSpecial(std::string litteral);
+        static void toChar(std::string litteral);
+        static void toInt(std::string litteral);
+        static void toFloat(std::string litteral);
+        static void toDouble(std::string litteral);
 };
 
-# endif
+#endif
